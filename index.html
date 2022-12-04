@@ -51,7 +51,7 @@
             var array = [];
             var firstValue='';
             var secondValue='';
-            var operator = '';
+            var operator = [];
             var operatorCount = 0;
             function myFunction(button)
             {  
@@ -63,8 +63,6 @@
                         
                         secondValue+=element;
                        
-                        
-                        
                     });
                     
 
@@ -92,8 +90,8 @@
                     }
 
                     array = [];
-                    firstValue='';
-                    secondValue='';
+                    firstValue=''
+                    secondValue=''
                     operator = '';
                     
                     
@@ -128,21 +126,29 @@
                             sub(firstValue,secondValue,operator);
                             firstValue = Number(firstValue)-Number(secondValue);
                             array = [];
-                            secondValue = ''
+                            secondValue = '';
                             
                         }
 
                         if(operator === '*')
                         {
                             mul(firstValue,secondValue,operator);
+                            firstValue = Number(firstValue)*Number(secondValue);
+                            array = [];
+                            secondValue = '';
                             
                         }
 
                         if(operator === "/")
                         {
                             div(firstValue,secondValue,operator);
+                            firstValue = Number(firstValue)/Number(secondValue);
+                            array = [];
+                            secondValue = '';
                             
                         }
+
+                        operator = button.innerHTML ;
 
                         
 
