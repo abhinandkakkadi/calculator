@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="border">
+    
+        <div class="screen">
+            <p id="show"></p>
+
+        </div>
+    
+
+        <div class="numop">
+            <div class="number">
+               
+                    <button onclick="myFunction(this)">1</button>
+                    <button onclick="myFunction(this)">2</button>
+                    <button onclick="myFunction(this)">3</button>
+                    <button onclick="myFunction(this)">4</button>
+                    <button onclick="myFunction(this)">5</button>
+                    <button onclick="myFunction(this)">6</button>
+                    <button onclick="myFunction(this)">7</button>
+                    <button onclick="myFunction(this)">8</button>
+                    <button onclick="myFunction(this)">9</button>
+                    <button onclick="myFunction(this)">.</button>
+                    <button onclick="myFunction(this)">0</button>
+                    <button onclick="myFunction(this)">=</button> 
+                
+            </div>
+
+        
+            <div class="operator">
+                 <button onclick="myFunction(this)">+</button>
+                <button>-</button>
+                <button>*</button>
+                <button>/</button>
+
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+            var array = [];
+            var firstValue='';
+            var secondValue='';
+            var operator = '';
+            function myFunction(button)
+            {  
+                
+                if(button.innerHTML === '=')
+                {
+                    operator = button.innerHTML;
+                    array.forEach(function(element){
+                        secondValue+=element;
+                        
+                    });
+
+                    console.log(Number(firstValue)+Number(secondValue))
+                    
+                }
+                else{
+                if(button.innerHTML == '+')
+                 {
+                    console.log("plus");
+                    operator = button.innerHTML;
+                    array.forEach(function(element){
+                        firstValue+=element;
+                        
+                    });
+                    console.log(firstValue);
+                        array = [];
+                      
+
+
+                 }
+               else{
+                let value = button.innerHTML;
+                console.log(value);
+                array.push(value);
+                console.log(array);
+                   }
+                }
+               
+            
+            }
+            
+            
+
+    
+    </script>
+</body>
+</html>
